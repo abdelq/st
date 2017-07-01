@@ -4,13 +4,13 @@ pkgrel=1
 pkgdesc='A simple virtual terminal emulator for X.'
 arch=('i686' 'x86_64')
 license=('MIT')
-depends=('libxft' 'libxext')
+depends=('libxft' 'libxext' 'adobe-source-code-pro-fonts')
 makedepends=('ncurses')
 url="http://st.suckless.org"
 source=(http://dl.suckless.org/st/$pkgname-$pkgver.tar.gz
         config.h)
 md5sums=('29b2a599cf1511c8062ed8f025c84c63'
-         'db080428894b5621e2532df9e69251f6')
+         'SKIP')
 
 prepare() {
   cd "$srcdir"/$pkgname-$pkgver
