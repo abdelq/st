@@ -4,17 +4,16 @@ pkgrel=1
 pkgdesc='A simple virtual terminal emulator for X.'
 arch=('i686' 'x86_64')
 license=('MIT')
-depends=('libxft' 'libxext' 'xorg-fonts-misc')
+depends=('libxft' 'libxext')
 makedepends=('ncurses')
 url="http://st.suckless.org"
 source=(http://dl.suckless.org/st/$pkgname-$pkgver.tar.gz
         config.h)
 md5sums=('29b2a599cf1511c8062ed8f025c84c63'
-         '9cb789e3912df36f296a219e1b9da850')
+         'db080428894b5621e2532df9e69251f6')
 
 prepare() {
   cd "$srcdir"/$pkgname-$pkgver
-  # skip terminfo which conflicts with nsurses
   sed -i '/\@tic /d' Makefile
   cp "$srcdir"/config.h config.h
 }
